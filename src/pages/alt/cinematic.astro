@@ -1,0 +1,738 @@
+---
+import '../../styles/global.css';
+import { Image } from 'astro:assets';
+
+// Hero & landscape images
+import driftBoat from '../../assets/images/carousel/drift-boat-green-valley.jpg';
+import sunsetGravelBar from '../../assets/images/carousel/sunset-gravel-bar.jpg';
+import wadingSnowy from '../../assets/images/carousel/wading-snowy-peaks.jpg';
+import goldenMeadow from '../../assets/images/carousel/golden-meadow-river.jpg';
+import mountainForest from '../../assets/images/carousel/mountain-river-forest.jpg';
+import riverAerial from '../../assets/images/carousel/river-canyon-aerial.jpg';
+
+// Gallery images
+import wadeFishingCanyon from '../../assets/images/gallery/wade-fishing-canyon.jpg';
+import walkWadeStream from '../../assets/images/gallery/walk-wade-mountain-stream.jpg';
+import rainbowYellowstone from '../../assets/images/gallery/rainbow-over-yellowstone.jpg';
+import aerialPelicans from '../../assets/images/gallery/aerial-pelicans-drift-boat.jpg';
+
+// About
+import brett from '../../assets/images/about/brett.jpg';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Outfitters — Fly Fishing Montana</title>
+    <meta name="description" content="Guided fly fishing in Montana's Gallatin Valley. Twenty-three years on the water. Roam Outfitters.">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`}>
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32x32.png`}>
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}apple-touch-icon.png`}>
+
+    <script is:inline>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         OPENING — DARKNESS
+         ═══════════════════════════════════════════ -->
+    <section class="cin-opening" aria-label="Introduction">
+        <div class="cin-opening-inner">
+            <h1 class="cin-title">Roam Outfitters</h1>
+            <p class="cin-subtitle">Gallatin Valley, Montana</p>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         FIRST IMAGE — DRIFT BOAT
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={driftBoat}
+            alt="A drift boat glides through Montana's green valley beneath wide-open sky"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="eager"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         FIRST WORDS
+         ═══════════════════════════════════════════ -->
+    <div class="cin-breath cin-breath--tall" data-cin-reveal>
+        <p class="cin-quote">Some mornings the river is the only clock that matters.</p>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         SECOND IMAGE — SUNSET GRAVEL BAR
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={sunsetGravelBar}
+            alt="Golden hour light floods a gravel bar on a wide Montana river"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+         ═══════════════════════════════════════════ -->
+    <section class="cin-breath cin-breath--about" aria-label="About" data-cin-reveal>
+        <span class="cin-label">The Guide</span>
+        <div class="cin-about-portrait">
+            <Image
+                src={brett}
+                alt="Brett Seng, fly fishing guide"
+                width={280}
+                class="cin-brett"
+                loading="lazy"
+            />
+        </div>
+        <div class="cin-about-text">
+            <p>Brett Seng has spent twenty-three years learning the language of Montana's rivers.</p>
+            <p>He guides because standing in cold water at dawn never stopped feeling like the right place to be.</p>
+            <p class="cin-about-location">Gallatin Valley, Southwest Montana</p>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         THIRD IMAGE — WADING SNOWY PEAKS
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={wadingSnowy}
+            alt="An angler wades a quiet river with snow-capped peaks rising in the distance"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         THE WATERS
+         ═══════════════════════════════════════════ -->
+    <section class="cin-breath cin-breath--tall" aria-label="Waters" data-cin-reveal>
+        <span class="cin-label">The Waters</span>
+        <p class="cin-rivers">Gallatin&ensp;&middot;&ensp;Yellowstone&ensp;&middot;&ensp;Madison&ensp;&middot;&ensp;Jefferson&ensp;&middot;&ensp;Boulder&ensp;&middot;&ensp;Missouri</p>
+        <p class="cin-waters-note">Six blue-ribbon rivers, each with its own temperament and light. Brett knows them the way you know old friends — by feel, by season, by the way the water moves at dusk.</p>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         FOURTH IMAGE — GOLDEN MEADOW RIVER
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={goldenMeadow}
+            alt="A winding river cuts through a golden meadow beneath an enormous Montana sky"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         A DAY ON THE WATER
+         ═══════════════════════════════════════════ -->
+    <section class="cin-breath cin-breath--trips" aria-label="Trips" data-cin-reveal>
+        <span class="cin-label">A Day on the Water</span>
+
+        <div class="cin-trip">
+            <span class="cin-trip-name">Full Day</span>
+            <span class="cin-trip-detail">eight hours</span>
+            <span class="cin-trip-price">$750 float&ensp;&middot;&ensp;$700 walk &amp; wade</span>
+        </div>
+
+        <div class="cin-trip">
+            <span class="cin-trip-name">Half Day</span>
+            <span class="cin-trip-detail">four to five hours</span>
+            <span class="cin-trip-price">$650 float&ensp;&middot;&ensp;$600 walk &amp; wade</span>
+        </div>
+
+        <p class="cin-trip-includes">Everything provided. Rod, reel, flies, lunch, transport.</p>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         FIFTH IMAGE — WADE FISHING CANYON
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={wadeFishingCanyon}
+            alt="A lone angler wade-fishes in a towering canyon"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         INTERLUDE QUOTE
+         ═══════════════════════════════════════════ -->
+    <div class="cin-breath" data-cin-reveal>
+        <p class="cin-quote">The best days never feel like they belong to a calendar.</p>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         GALLERY IMAGES — ONE AT A TIME
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={mountainForest}
+            alt="A river meanders through dense forest beneath mountain ridges"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+    <div class="cin-spacer"></div>
+
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={walkWadeStream}
+            alt="Walk and wade fishing on a clear mountain stream"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+    <div class="cin-spacer"></div>
+
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={rainbowYellowstone}
+            alt="A rainbow arcs over the Yellowstone River valley"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+    <div class="cin-spacer"></div>
+
+    <figure class="cin-frame" data-cin-reveal>
+        <Image
+            src={aerialPelicans}
+            alt="Pelicans fly alongside a drift boat seen from above"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+         ═══════════════════════════════════════════ -->
+    <section class="cin-breath cin-breath--contact" aria-label="Contact" data-cin-reveal>
+        <span class="cin-label">Get in Touch</span>
+        <div class="cin-contact-info">
+            <a href="tel:+14065390957" class="cin-contact-line">406.539.0957</a>
+            <a href="mailto:roamoutfittersmt@gmail.com" class="cin-contact-line">roamoutfittersmt@gmail.com</a>
+            <a href="https://instagram.com/roam_outfitters_mt" target="_blank" rel="noopener noreferrer" class="cin-contact-line">@roam_outfitters_mt</a>
+        </div>
+        <p class="cin-contact-cta">Call when you're ready.</p>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         FINAL IMAGE — RIVER CANYON AERIAL
+         ═══════════════════════════════════════════ -->
+    <figure class="cin-frame cin-frame--final" data-cin-reveal>
+        <Image
+            src={riverAerial}
+            alt="A vast river canyon seen from above, the water catching the last light"
+            widths={[800, 1200, 1920]}
+            sizes="100vw"
+            class="cin-image"
+            loading="lazy"
+        />
+    </figure>
+
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER — DARKNESS
+         ═══════════════════════════════════════════ -->
+    <footer class="cin-footer">
+        <p>&copy; 2025 Roam Outfitters</p>
+    </footer>
+
+
+    <!-- ═══════════════════════════════════════════
+         SCROLL REVEAL SCRIPT
+         ═══════════════════════════════════════════ -->
+    <script is:inline>
+        (function () {
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReduced) {
+                document.querySelectorAll('[data-cin-reveal]').forEach(function (el) {
+                    el.style.opacity = '1';
+                });
+                return;
+            }
+
+            var observer = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('cin-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
+            );
+
+            document.querySelectorAll('[data-cin-reveal]').forEach(function (el) {
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
+
+<style is:global>
+    /* ═══════════════════════════════════════════
+       CINEMATIC STILLNESS — PAGE STYLES
+       ═══════════════════════════════════════════ */
+
+    /* --- Reset & Foundation --- */
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f7f6f3;
+        color: #2a2825;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 15px;
+        line-height: 1.9;
+        letter-spacing: 0.01em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+    }
+
+    /* Scroll snap for desktop cinematic feel */
+    @media (min-width: 1024px) and (hover: hover) {
+        html {
+            scroll-snap-type: y proximity;
+        }
+
+        .cin-opening,
+        .cin-frame {
+            scroll-snap-align: start;
+        }
+    }
+
+
+    /* --- Reveal Animation --- */
+
+    [data-cin-reveal] {
+        opacity: 0;
+        transition: opacity 1.5s ease;
+    }
+
+    [data-cin-reveal].cin-visible {
+        opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        [data-cin-reveal] {
+            opacity: 1 !important;
+            transition: none !important;
+        }
+    }
+
+
+    /* --- Opening Section --- */
+
+    .cin-opening {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: #1a1917;
+        padding: 2rem;
+    }
+
+    .cin-opening-inner {
+        text-align: center;
+    }
+
+    .cin-title {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-weight: 300;
+        font-size: 13px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #d4d0ca;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .cin-subtitle {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        color: #6b6660;
+        margin: 0;
+    }
+
+
+    /* --- Image Frames --- */
+
+    .cin-frame {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .cin-frame {
+            padding: 1.5rem 2.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cin-frame {
+            padding: 2rem 4vw;
+        }
+    }
+
+    .cin-image {
+        display: block;
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+    }
+
+    @media (min-width: 640px) {
+        .cin-image {
+            height: 75vh;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cin-image {
+            height: 80vh;
+        }
+    }
+
+    .cin-frame--final {
+        margin-bottom: 0;
+    }
+
+
+    /* --- Breathing Space Sections --- */
+
+    .cin-breath {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 6rem 2rem;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .cin-breath--tall {
+        padding: 8rem 2rem;
+    }
+
+    @media (min-width: 640px) {
+        .cin-breath {
+            padding: 8rem 3rem;
+        }
+
+        .cin-breath--tall {
+            padding: 12rem 3rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cin-breath {
+            padding: 10rem 3rem;
+        }
+
+        .cin-breath--tall {
+            padding: 16rem 3rem;
+        }
+    }
+
+
+    /* --- Section Labels --- */
+
+    .cin-label {
+        display: block;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #8a8580;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 640px) {
+        .cin-label {
+            font-size: 11px;
+            margin-bottom: 3.5rem;
+        }
+    }
+
+
+    /* --- Quotes --- */
+
+    .cin-quote {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 1.7;
+        color: #4a7c7e;
+        max-width: 480px;
+        margin: 0;
+    }
+
+    @media (min-width: 640px) {
+        .cin-quote {
+            font-size: 24px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cin-quote {
+            font-size: 26px;
+        }
+    }
+
+
+    /* --- About --- */
+
+    .cin-breath--about {
+        max-width: 520px;
+    }
+
+    .cin-about-portrait {
+        margin-bottom: 2.5rem;
+    }
+
+    .cin-brett {
+        display: block;
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    @media (min-width: 640px) {
+        .cin-brett {
+            width: 160px;
+            height: 160px;
+        }
+    }
+
+    .cin-about-text p {
+        font-size: 14px;
+        line-height: 2;
+        color: #2a2825;
+        margin: 0 0 1.2rem 0;
+    }
+
+    .cin-about-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    .cin-about-location {
+        color: #8a8580 !important;
+        font-size: 13px !important;
+        letter-spacing: 0.03em;
+        margin-top: 1rem !important;
+    }
+
+
+    /* --- Rivers --- */
+
+    .cin-rivers {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 18px;
+        letter-spacing: 0.04em;
+        color: #2a2825;
+        margin: 0 0 2.5rem 0;
+        line-height: 2;
+    }
+
+    @media (min-width: 640px) {
+        .cin-rivers {
+            font-size: 22px;
+            white-space: nowrap;
+        }
+    }
+
+    .cin-waters-note {
+        font-size: 14px;
+        line-height: 2;
+        color: #8a8580;
+        max-width: 420px;
+        margin: 0;
+    }
+
+
+    /* --- Trips --- */
+
+    .cin-breath--trips {
+        max-width: 480px;
+    }
+
+    .cin-trip {
+        margin-bottom: 2.5rem;
+    }
+
+    .cin-trip:last-of-type {
+        margin-bottom: 2rem;
+    }
+
+    .cin-trip-name {
+        display: block;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0.06em;
+        color: #2a2825;
+        margin-bottom: 0.3rem;
+    }
+
+    .cin-trip-detail {
+        display: block;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-size: 15px;
+        color: #8a8580;
+        margin-bottom: 0.5rem;
+    }
+
+    .cin-trip-price {
+        display: block;
+        font-size: 13px;
+        letter-spacing: 0.02em;
+        color: #2a2825;
+    }
+
+    .cin-trip-includes {
+        font-size: 13px;
+        color: #8a8580;
+        letter-spacing: 0.02em;
+        margin: 0;
+    }
+
+
+    /* --- Spacer between gallery images --- */
+
+    .cin-spacer {
+        height: 6rem;
+    }
+
+    @media (min-width: 640px) {
+        .cin-spacer {
+            height: 8rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cin-spacer {
+            height: 10rem;
+        }
+    }
+
+
+    /* --- Contact --- */
+
+    .cin-breath--contact {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    @media (min-width: 640px) {
+        .cin-breath--contact {
+            padding-top: 14rem;
+            padding-bottom: 14rem;
+        }
+    }
+
+    .cin-contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .cin-contact-line {
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        color: #2a2825;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .cin-contact-line:hover {
+        color: #4a7c7e;
+    }
+
+    .cin-contact-cta {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-size: 18px;
+        color: #8a8580;
+        margin: 0;
+    }
+
+
+    /* --- Footer --- */
+
+    .cin-footer {
+        background-color: #1a1917;
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+
+    .cin-footer p {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        color: #5a5650;
+        margin: 0;
+    }
+</style>

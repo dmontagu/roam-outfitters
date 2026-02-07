@@ -1,0 +1,197 @@
+---
+import '../../styles/global.css';
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Outfitters — Design Concepts</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style is:global>
+        body {
+            background: #0f0e0d;
+            color: #e8e4df;
+            font-family: 'Inter', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .concepts-page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        .concepts-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .concepts-header .label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 16px;
+        }
+
+        .concepts-header h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #fff;
+            margin: 0 0 16px;
+            line-height: 1.2;
+        }
+
+        .concepts-header p {
+            font-size: 15px;
+            color: #888;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .concepts-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .concept-card {
+            display: block;
+            background: #1a1917;
+            border: 1px solid #2a2825;
+            border-radius: 12px;
+            padding: 40px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+        }
+
+        .concept-card:hover {
+            border-color: #c49a3c;
+            transform: translateY(-2px);
+            background: #1f1e1b;
+        }
+
+        .concept-card .number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 14px;
+            color: #c49a3c;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .concept-card h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 600;
+            font-size: 1.75rem;
+            color: #fff;
+            margin: 0 0 8px;
+        }
+
+        .concept-card .tagline {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-size: 16px;
+            color: #c49a3c;
+            margin-bottom: 16px;
+        }
+
+        .concept-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #999;
+            margin: 0;
+        }
+
+        .concept-card .arrow {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #c49a3c;
+            transition: transform 0.2s ease;
+        }
+
+        .concept-card:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .concepts-footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #2a2825;
+        }
+
+        .concepts-footer a {
+            color: #c49a3c;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .concepts-footer a:hover {
+            color: #d4aa4c;
+        }
+
+        .concepts-footer p {
+            font-size: 13px;
+            color: #666;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="concepts-page">
+        <header class="concepts-header">
+            <div class="label">Design Exploration</div>
+            <h1>Roam Outfitters</h1>
+            <p>Four alternative design interpretations of the same content, images, and brand. Each takes a dramatically different approach to tone, layout, and visual language.</p>
+        </header>
+
+        <div class="concepts-grid">
+            <a href={`${import.meta.env.BASE_URL}alt/dirtbag`} class="concept-card">
+                <div class="number">Concept I</div>
+                <h2>The Dirtbag Chronicle</h2>
+                <div class="tagline">If the current site is a whiskey bar, this is the campfire outside it.</div>
+                <p>Leans all the way into "A Gentleman's Dirtbag Club." Warm, irreverent, funny — like Brett telling you about his life over beers. Scrapbook-style layout with scattered polaroid photos, torn paper edges, camp aesthetic. The personality is the product.</p>
+                <span class="arrow">View concept →</span>
+            </a>
+
+            <a href={`${import.meta.env.BASE_URL}alt/cinematic`} class="concept-card">
+                <div class="number">Concept II</div>
+                <h2>Cinematic Stillness</h2>
+                <div class="tagline">Standing alone on the riverbank at dawn.</div>
+                <p>Ultra-minimal, meditative, and contemplative. One image at a time, surrounded by vast whitespace. Poetic micro-copy whispered beneath grand photography. The site becomes an experience you slowly scroll through — selling the feeling of escape.</p>
+                <span class="arrow">View concept →</span>
+            </a>
+
+            <a href={`${import.meta.env.BASE_URL}alt/editorial`} class="concept-card">
+                <div class="number">Concept III</div>
+                <h2>Adventure Editorial</h2>
+                <div class="tagline">The long-form profile of the bartender in a beautiful magazine you find there.</div>
+                <p>Redesigned as a feature spread in a high-end outdoor magazine. Drop caps, pull quotes, full-bleed photography, and literary narrative. Third-person profile: "Brett Seng has spent two decades learning the language of Montana's rivers..."</p>
+                <span class="arrow">View concept →</span>
+            </a>
+
+            <a href={`${import.meta.env.BASE_URL}alt/bold`} class="concept-card">
+                <div class="number">Concept IV</div>
+                <h2>Bold Territory</h2>
+                <div class="tagline">The matte-black Yeti cooler in the back of the truck.</div>
+                <p>High-energy, modern, confident. Dark-dominant with massive typography, sharp geometry, and electric teal accents. Positions Roam Outfitters like a premium outdoor brand. Short, punchy copy with swagger: "23 years. Six rivers. One obsession."</p>
+                <span class="arrow">View concept →</span>
+            </a>
+        </div>
+
+        <footer class="concepts-footer">
+            <a href={`${import.meta.env.BASE_URL}`}>← Back to current site</a>
+            <p>These are unlisted concepts for internal review only.</p>
+        </footer>
+    </div>
+</body>
+</html>

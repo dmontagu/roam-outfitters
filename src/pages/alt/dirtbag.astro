@@ -1,0 +1,1915 @@
+---
+import '../../styles/global.css';
+import { Image } from 'astro:assets';
+
+// Hero / feature images
+import fishFaceFun from '../../assets/images/gallery/fish-face-fun.jpg';
+import gallatinCanyon from '../../assets/images/carousel/gallatin-canyon.jpg';
+import sunsetGravelBar from '../../assets/images/carousel/sunset-gravel-bar.jpg';
+import goldenMeadowRiver from '../../assets/images/carousel/golden-meadow-river.jpg';
+
+// About images
+import brett from '../../assets/images/about/brett.jpg';
+import brettSonBrownTrout from '../../assets/images/gallery/brett-son-brown-trout.jpg';
+import brettDaughterCreekCatch from '../../assets/images/gallery/brett-daughter-creek-catch.jpg';
+
+// Rivers / divider images
+import wadingSnowy from '../../assets/images/carousel/wading-snowy-peaks.jpg';
+import riverCanyonAerial from '../../assets/images/carousel/river-canyon-aerial.jpg';
+import driftBoatGreenValley from '../../assets/images/carousel/drift-boat-green-valley.jpg';
+import mountainRiverForest from '../../assets/images/carousel/mountain-river-forest.jpg';
+
+// Gallery images
+import trophyBrown from '../../assets/images/gallery/trophy-brown-streamside.jpg';
+import rainbowYellowstone from '../../assets/images/gallery/rainbow-over-yellowstone.jpg';
+import driftBoatBridge from '../../assets/images/gallery/drift-boat-wooden-bridge.jpg';
+import aerialPelicans from '../../assets/images/gallery/aerial-pelicans-drift-boat.jpg';
+import wadeFishingCanyon from '../../assets/images/gallery/wade-fishing-canyon.jpg';
+import coupleBrownTrout from '../../assets/images/gallery/couple-brown-trout-boat.jpg';
+import kidFirstRainbow from '../../assets/images/gallery/kid-first-rainbow.jpg';
+import castingUnderBridge from '../../assets/images/gallery/casting-under-bridge.jpg';
+import buddiesRainbow from '../../assets/images/gallery/buddies-rainbow-on-boat.jpg';
+import rainbowCelebration from '../../assets/images/gallery/rainbow-catch-celebration.jpg';
+import fatherSonRiver from '../../assets/images/gallery/father-son-river-rainbow.jpg';
+import selectingFlies from '../../assets/images/carousel/selecting-flies-riverside.jpg';
+import walkWadeMountain from '../../assets/images/gallery/walk-wade-mountain-stream.jpg';
+import flySelectionCreek from '../../assets/images/gallery/fly-selection-creekside.jpg';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roam Outfitters | A Gentleman's Dirtbag Club | Montana Fly Fishing</title>
+  <meta name="description" content="23 years of standing in cold water so you don't have to figure it out yourself. Guided fly fishing in Montana's Gallatin Valley with Roam Outfitters." />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`} />
+  <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32x32.png`} />
+  <link rel="icon" type="image/png" sizes="16x16" href={`${base}favicon-16x16.png`} />
+  <link rel="apple-touch-icon" sizes="180x180" href={`${base}apple-touch-icon.png`} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+
+<body class="dirtbag-page">
+
+  <!-- ===== STICKY NAV ===== -->
+  <nav class="dirtbag-nav" id="dirtbag-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">ROAM</a>
+      <div class="nav-links-desktop">
+        <a href="#about">About</a>
+        <a href="#rivers">Rivers</a>
+        <a href="#trips">Trips</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="tel:4065390957" class="nav-cta">Book a Trip</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="nav-mobile-menu" id="nav-mobile-menu">
+      <a href="#about">About</a>
+      <a href="#rivers">Rivers</a>
+      <a href="#trips">Trips</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:4065390957" class="mobile-cta">Call to Book: (406) 539-0957</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content-area">
+        <div class="hero-text" data-reveal="up">
+          <p class="hero-label">Gallatin Valley, Montana</p>
+          <h1 class="hero-title">ROAM<br/>OUTFITTERS</h1>
+          <div class="hero-tagline-wrap">
+            <span class="hero-dash"></span>
+            <p class="hero-tagline">A Gentleman's Dirtbag Club</p>
+            <span class="hero-dash"></span>
+          </div>
+          <p class="hero-subtitle">Fly fishing guides who take the fish seriously<br class="hidden-mobile" /> and themselves not at all.</p>
+          <div class="hero-actions">
+            <a href="#trips" class="btn-primary">See Trip Options</a>
+            <a href="tel:4065390957" class="btn-secondary">Call Brett</a>
+          </div>
+        </div>
+        <div class="hero-polaroid" data-reveal="right">
+          <div class="polaroid-frame polaroid-hero">
+            <Image src={fishFaceFun} alt="Brett kissing a trout - the signature move" width={520} quality={85} />
+            <p class="polaroid-caption">Yeah, I kiss the fish. The fish don't mind.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle background image -->
+      <div class="hero-bg-image">
+        <Image src={gallatinCanyon} alt="" width={1920} quality={60} />
+      </div>
+    </section>
+
+    <!-- Torn paper divider -->
+    <div class="torn-divider torn-cream-to-brown"></div>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT BRETT
+         ═══════════════════════════════════════════ -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <p class="section-label" data-reveal="up">THE GUY IN THE BOAT</p>
+        <h2 class="section-heading text-cream" data-reveal="up">Meet Brett</h2>
+
+        <div class="about-layout">
+          <div class="about-photos" data-reveal="left">
+            <div class="polaroid-frame polaroid-tilt-left">
+              <Image src={brett} alt="Brett with clients, all smiles holding a big brown trout" width={440} quality={85} />
+              <p class="polaroid-caption">The office. No cubicles. No regrets.</p>
+            </div>
+          </div>
+
+          <div class="about-text" data-reveal="right">
+            <p class="about-lead">I've spent 23 years standing in cold water so you don't have to figure it out yourself.</p>
+            <p>Here's the deal: I'm Brett, and I run Roam Outfitters out of Montana's Gallatin Valley. Licensed outfitter since 2013, but I was already neck-deep in trout water for a decade before that. I've got a wife (Ally, who puts up with me), a son (Waylon, already out-fishing his old man), and a daughter (Letty, who can land a rainbow before most adults can tie a knot).</p>
+            <p>I'm not going to put on airs. I've got a beard that's seen better days, I make fish-face kissy poses with every big catch, and I believe the best days are the ones where you end up a little sunburned, a little sore, and absolutely stoked about the one that didn't get away.</p>
+            <p>Southwest Montana is my backyard. I know these rivers the way you know your commute &mdash; except my commute has elk, bald eagles, and the occasional moose that doesn't respect personal space.</p>
+            <blockquote class="about-quote">
+              <span class="quote-mark">&ldquo;</span>We're a gentleman's dirtbag club. Bring your best manners and your worst shoes.
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Kid photos scattered -->
+        <div class="family-snapshots">
+          <div class="polaroid-frame polaroid-tilt-right snapshot-1" data-reveal="up">
+            <Image src={brettSonBrownTrout} alt="Waylon holding a nice brown trout" width={360} quality={85} />
+            <p class="polaroid-caption">Waylon. Already dangerous.</p>
+          </div>
+          <div class="polaroid-frame polaroid-tilt-left snapshot-2" data-reveal="up">
+            <Image src={brettDaughterCreekCatch} alt="Letty with her creek catch" width={360} quality={85} />
+            <p class="polaroid-caption">Letty. Natural born angler.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Torn paper divider -->
+    <div class="torn-divider torn-brown-to-cream"></div>
+
+    <!-- ═══════════════════════════════════════════
+         PHOTO BREAK
+         ═══════════════════════════════════════════ -->
+    <div class="photo-break">
+      <Image src={sunsetGravelBar} alt="Sunset on the gravel bar" width={1920} quality={75} />
+      <p class="photo-break-caption" data-reveal="up">The office closes when the light says so.</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         RIVERS SECTION
+         ═══════════════════════════════════════════ -->
+    <section id="rivers" class="rivers-section">
+      <div class="section-container">
+        <p class="section-label section-label-dark" data-reveal="up">FIELD NOTEBOOK</p>
+        <h2 class="section-heading text-espresso" data-reveal="up">The Rivers</h2>
+        <p class="rivers-intro" data-reveal="up">Six rivers. Endless runs. Each one has its own personality &mdash; kind of like friends you keep going back to because they never disappoint.</p>
+
+        <div class="rivers-grid">
+          <div class="river-card" data-reveal="up">
+            <div class="river-card-img">
+              <Image src={gallatinCanyon} alt="Gallatin River canyon" width={500} quality={80} />
+            </div>
+            <div class="river-card-body">
+              <h3>Gallatin River</h3>
+              <p class="river-vibe">The Backyard</p>
+              <p>Fast, cold, and full of attitude. This is where I cut my teeth, and it's still where I go when I need a river to put me in my place. Pocket water, riffles, and more willing trout per mile than anywhere I know.</p>
+            </div>
+          </div>
+
+          <div class="river-card" data-reveal="up">
+            <div class="river-card-img">
+              <Image src={wadingSnowy} alt="Wading with snowy peaks" width={500} quality={80} />
+            </div>
+            <div class="river-card-body">
+              <h3>Yellowstone River</h3>
+              <p class="river-vibe">The Legend</p>
+              <p>The longest undammed river in the lower 48. She's moody, beautiful, and absolutely loaded with cutthroat and browns. Float it and you'll understand why people write songs about this place.</p>
+            </div>
+          </div>
+
+          <div class="river-card" data-reveal="up">
+            <div class="river-card-img">
+              <Image src={driftBoatGreenValley} alt="Drift boat in green valley" width={500} quality={80} />
+            </div>
+            <div class="river-card-body">
+              <h3>Madison River</h3>
+              <p class="river-vibe">The Heavy Hitter</p>
+              <p>Born where the Firehole and Gibbon meet in Yellowstone, the Madison is 50 miles of trout factory. Big bugs, bigger fish, and the kind of dry fly action that ruins you for other rivers.</p>
+            </div>
+          </div>
+
+          <div class="river-card" data-reveal="up">
+            <div class="river-card-img">
+              <Image src={mountainRiverForest} alt="Mountain river through forest" width={500} quality={80} />
+            </div>
+            <div class="river-card-body">
+              <h3>Jefferson River</h3>
+              <p class="river-vibe">The Sleeper</p>
+              <p>Nobody talks about the Jeff, and honestly, I'd like to keep it that way. But since you're here: big browns, zero crowds, and the kind of solitude that makes you forget what day it is.</p>
+            </div>
+          </div>
+
+          <div class="river-card" data-reveal="up">
+            <div class="river-card-img">
+              <Image src={riverCanyonAerial} alt="River canyon from above" width={500} quality={80} />
+            </div>
+            <div class="river-card-body">
+              <h3>Boulder River</h3>
+              <p class="river-vibe">The Hidden Gem</p>
+              <p>Tuck yourself into a canyon, listen to the water talk, and catch wild trout that have never seen a pellet. The Boulder is pocket water paradise and one of my favorite places on earth.</p>
+            </div>
+          </div>
+
+          <div class="river-card" data-reveal="up">
+            <div class="river-card-img">
+              <Image src={goldenMeadowRiver} alt="River through golden meadow" width={500} quality={80} />
+            </div>
+            <div class="river-card-body">
+              <h3>Missouri River</h3>
+              <p class="river-vibe">The Trophy Case</p>
+              <p>If you want to catch the biggest trout of your life on a dry fly, this is the river. Technical, rewarding, and absolutely stacked with fish that'll test everything you've got.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PHOTO BREAK 2
+         ═══════════════════════════════════════════ -->
+    <div class="photo-break">
+      <Image src={selectingFlies} alt="Selecting flies riverside" width={1920} quality={75} />
+      <p class="photo-break-caption" data-reveal="up">Matching the hatch. Science disguised as fun.</p>
+    </div>
+
+    <!-- Torn paper divider -->
+    <div class="torn-divider torn-cream-to-brown"></div>
+
+    <!-- ═══════════════════════════════════════════
+         TRIPS / PRICING
+         ═══════════════════════════════════════════ -->
+    <section id="trips" class="trips-section">
+      <div class="section-container">
+        <p class="section-label" data-reveal="up">CAMP MESS HALL MENU</p>
+        <h2 class="section-heading text-cream" data-reveal="up">Trip Options</h2>
+        <p class="trips-intro" data-reveal="up">No hidden fees. No weird upsells. Just honest pricing for an honest day on the water. All trips include flies, use of rods & reels, and a guide who actually knows what he's doing.</p>
+
+        <div class="menu-board" data-reveal="up">
+          <div class="menu-board-inner">
+
+            <div class="menu-section">
+              <h3 class="menu-section-title">Full Day Adventures</h3>
+              <p class="menu-section-subtitle">~8 hours on the water. Lunch included. Bring sunscreen.</p>
+
+              <div class="menu-item">
+                <div class="menu-item-left">
+                  <span class="menu-item-name">Float Trip</span>
+                  <span class="menu-dots"></span>
+                </div>
+                <span class="menu-price">$750</span>
+              </div>
+              <p class="menu-item-desc">Drift boat, two anglers max. Hit miles of water from the best seat in the house.</p>
+
+              <div class="menu-item">
+                <div class="menu-item-left">
+                  <span class="menu-item-name">Walk &amp; Wade</span>
+                  <span class="menu-dots"></span>
+                </div>
+                <span class="menu-price">$700</span>
+              </div>
+              <p class="menu-item-desc">Boots in the river, hands on fish. For folks who want to feel every current.</p>
+            </div>
+
+            <div class="menu-divider-line"></div>
+
+            <div class="menu-section">
+              <h3 class="menu-section-title">Half Day Adventures</h3>
+              <p class="menu-section-subtitle">4&ndash;5 hours. Perfect for morning risers or afternoon hatches.</p>
+
+              <div class="menu-item">
+                <div class="menu-item-left">
+                  <span class="menu-item-name">Float Trip</span>
+                  <span class="menu-dots"></span>
+                </div>
+                <span class="menu-price">$650</span>
+              </div>
+              <p class="menu-item-desc">Same great drift, just less time arguing about who caught the bigger one.</p>
+
+              <div class="menu-item">
+                <div class="menu-item-left">
+                  <span class="menu-item-name">Walk &amp; Wade</span>
+                  <span class="menu-dots"></span>
+                </div>
+                <span class="menu-price">$600</span>
+              </div>
+              <p class="menu-item-desc">A quick wade to scratch the itch. Plenty of time to still make dinner.</p>
+            </div>
+
+            <div class="menu-divider-line"></div>
+
+            <div class="menu-fine-print">
+              <p><strong>What's included:</strong> All flies, leader, tippet, use of quality rods &amp; reels. Just bring yourself, a valid Montana fishing license, and a sense of humor.</p>
+              <p><strong>Good to know:</strong> Trips are for up to 2 anglers per boat. Want to bring more people? We can make it work &mdash; just call.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="trips-cta" data-reveal="up">
+          <p class="trips-cta-text">Ready to get your hands wet?</p>
+          <a href="tel:4065390957" class="btn-primary btn-large">Call (406) 539-0957</a>
+          <p class="trips-cta-subtext">or email <a href="mailto:roamoutfittersmt@gmail.com">roamoutfittersmt@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Torn paper divider -->
+    <div class="torn-divider torn-brown-to-cream"></div>
+
+    <!-- ═══════════════════════════════════════════
+         GALLERY SECTION
+         ═══════════════════════════════════════════ -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-container">
+        <p class="section-label section-label-dark" data-reveal="up">THE EVIDENCE</p>
+        <h2 class="section-heading text-espresso" data-reveal="up">Proof We Actually Fish</h2>
+        <p class="gallery-intro" data-reveal="up">Photos from the water, the boat, and everywhere in between. No stock photos. No filters. Just real days, real fish, and real good times.</p>
+
+        <div class="scattered-gallery">
+          <div class="scatter-photo scatter-1" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={trophyBrown} alt="Trophy brown trout streamside" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-2" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={rainbowYellowstone} alt="Rainbow arcing over the Yellowstone" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-3" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={driftBoatBridge} alt="Drift boat passing under wooden bridge" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-4" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={aerialPelicans} alt="Aerial view of pelicans and drift boat" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-5" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={wadeFishingCanyon} alt="Wade fishing in the canyon" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-6" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={coupleBrownTrout} alt="Happy couple with a brown trout on the boat" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-7" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={kidFirstRainbow} alt="Kid's first rainbow trout" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-8" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={castingUnderBridge} alt="Casting under a bridge" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-9" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={buddiesRainbow} alt="Buddies with a rainbow trout on the boat" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-10" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={fatherSonRiver} alt="Father and son fishing, rainbow trout" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-11" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={walkWadeMountain} alt="Walk and wade in a mountain stream" width={400} quality={80} />
+            </div>
+          </div>
+          <div class="scatter-photo scatter-12" data-reveal="up">
+            <div class="polaroid-frame">
+              <Image src={rainbowCelebration} alt="Rainbow catch celebration" width={400} quality={80} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PULL QUOTE
+         ═══════════════════════════════════════════ -->
+    <div class="pull-quote-section">
+      <div class="pull-quote-bg">
+        <Image src={wadingSnowy} alt="" width={1920} quality={60} />
+      </div>
+      <div class="pull-quote-overlay"></div>
+      <blockquote class="pull-quote-text" data-reveal="up">
+        <span class="quote-mark-large">&ldquo;</span>
+        The best days don't end with the biggest fish. They end with the biggest grin.
+      </blockquote>
+    </div>
+
+    <!-- Torn paper divider -->
+    <div class="torn-divider torn-cream-to-brown"></div>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT / POSTCARD
+         ═══════════════════════════════════════════ -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <p class="section-label" data-reveal="up">SEND A POSTCARD</p>
+        <h2 class="section-heading text-cream" data-reveal="up">Let's Go Fishing</h2>
+
+        <div class="postcard" data-reveal="up">
+          <div class="postcard-inner">
+            <div class="postcard-left">
+              <div class="postcard-stamp">
+                <Image src={flySelectionCreek} alt="Fly selection" width={120} quality={80} />
+              </div>
+              <p class="postcard-greeting">Dear Future Fishing Buddy,</p>
+              <p>If you've made it this far, you're probably the kind of person I want to spend a day on the water with. I don't care if you've been casting since you were five or if you've never held a rod. I care that you want to be outside, knee-deep in something beautiful, catching fish and telling stories.</p>
+              <p>Give me a call, shoot me an email, or hit me up on Instagram. Let's figure out a day that works and get you on some water.</p>
+              <p class="postcard-signoff">&mdash; Brett</p>
+            </div>
+            <div class="postcard-right">
+              <div class="postcard-divider-vert"></div>
+              <div class="postcard-details">
+                <div class="postcard-detail">
+                  <span class="postcard-detail-label">Phone</span>
+                  <a href="tel:4065390957">(406) 539-0957</a>
+                </div>
+                <div class="postcard-detail">
+                  <span class="postcard-detail-label">Email</span>
+                  <a href="mailto:roamoutfittersmt@gmail.com">roamoutfittersmt@gmail.com</a>
+                </div>
+                <div class="postcard-detail">
+                  <span class="postcard-detail-label">Instagram</span>
+                  <a href="https://www.instagram.com/roam_outfitters_mt/" target="_blank" rel="noopener">@roam_outfitters_mt</a>
+                </div>
+                <div class="postcard-detail">
+                  <span class="postcard-detail-label">Home Base</span>
+                  <p>Gallatin Valley<br/>Southwest Montana</p>
+                </div>
+                <a href="tel:4065390957" class="btn-primary btn-large postcard-cta">Call Brett</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="dirtbag-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">ROAM OUTFITTERS</p>
+      <p class="footer-tagline">A Gentleman's Dirtbag Club</p>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Roam Outfitters. All rights reserved. Fish kisses optional.</p>
+      <div class="footer-links">
+        <a href="tel:4065390957">(406) 539-0957</a>
+        <span class="footer-dot">&bull;</span>
+        <a href="mailto:roamoutfittersmt@gmail.com">Email</a>
+        <span class="footer-dot">&bull;</span>
+        <a href="https://www.instagram.com/roam_outfitters_mt/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Grain overlay for texture -->
+  <canvas class="grain-overlay" id="grain-canvas" aria-hidden="true"></canvas>
+
+<style is:global>
+  /* ═══════════════════════════════════════════
+     DIRTBAG CHRONICLE - COMPLETE STYLES
+     ═══════════════════════════════════════════ */
+
+  /* --- Custom Properties --- */
+  .dirtbag-page {
+    --cream: #F5F0E8;
+    --leather: #3D2B1F;
+    --campfire: #D4763C;
+    --sandy: #C4956A;
+    --espresso: #2C1810;
+    --cream-dark: #E8E0D4;
+
+    --font-heading: 'Archivo Black', 'Impact', sans-serif;
+    --font-body: 'Cabin', 'Inter', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-slab: 'Zilla Slab', 'Georgia', serif;
+
+    background-color: var(--cream);
+    color: var(--espresso);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  .dirtbag-page *, .dirtbag-page *::before, .dirtbag-page *::after {
+    box-sizing: border-box;
+  }
+
+  .dirtbag-page img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* --- Utility --- */
+  .text-cream { color: var(--cream); }
+  .text-espresso { color: var(--espresso); }
+  .hidden-mobile { display: inline; }
+  @media (max-width: 768px) {
+    .hidden-mobile { display: none; }
+  }
+
+  /* ═══════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════ */
+  .dirtbag-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(61, 43, 31, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dirtbag-nav.scrolled {
+    background: rgba(44, 24, 16, 0.96);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: color 0.2s;
+  }
+
+  .nav-brand:hover {
+    color: var(--campfire);
+  }
+
+  .nav-links-desktop {
+    display: none;
+    gap: 2rem;
+  }
+
+  @media (min-width: 769px) {
+    .nav-links-desktop {
+      display: flex;
+    }
+  }
+
+  .nav-links-desktop a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links-desktop a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--campfire);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links-desktop a:hover {
+    color: var(--campfire);
+  }
+
+  .nav-links-desktop a:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    display: none;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--espresso);
+    background: var(--campfire);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: #e0854b;
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 769px) {
+    .nav-cta { display: block; }
+  }
+
+  /* Hamburger */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  @media (min-width: 769px) {
+    .nav-hamburger { display: none; }
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+  .nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 1.5rem 1.5rem;
+    background: rgba(44, 24, 16, 0.98);
+  }
+
+  .nav-mobile-menu.open {
+    display: flex;
+  }
+
+  .nav-mobile-menu a {
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-mobile-menu .mobile-cta {
+    margin-top: 1rem;
+    text-align: center;
+    background: var(--campfire);
+    color: var(--espresso);
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    border-bottom: none;
+  }
+
+  /* ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.08;
+  }
+
+  .hero-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content-area {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero-content-area {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      padding: 6rem 3rem 4rem;
+    }
+  }
+
+  .hero-text {
+    flex: 1;
+    text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero-text {
+      text-align: left;
+    }
+  }
+
+  .hero-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--campfire);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 10vw, 7rem);
+    line-height: 0.9;
+    color: var(--espresso);
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-tagline-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .hero-tagline-wrap {
+      justify-content: flex-start;
+    }
+  }
+
+  .hero-dash {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--campfire);
+    flex-shrink: 0;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    color: var(--leather);
+    white-space: nowrap;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: #5a4a3e;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  @media (min-width: 900px) {
+    .hero-subtitle { margin-left: 0; }
+  }
+
+  @media (max-width: 899px) {
+    .hero-subtitle { margin-left: auto; margin-right: auto; }
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero-actions { justify-content: flex-start; }
+  }
+
+  .hero-polaroid {
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════════
+     BUTTONS
+     ═══════════════════════════════════════════ */
+  .btn-primary {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    background: var(--campfire);
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #e0854b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(212, 118, 60, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--espresso);
+    background: transparent;
+    border: 2px solid var(--espresso);
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--espresso);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  .btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     POLAROID FRAMES
+     ═══════════════════════════════════════════ */
+  .polaroid-frame {
+    background: #fff;
+    padding: 10px 10px 40px 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  }
+
+  .polaroid-frame:hover {
+    transform: rotate(0deg) scale(1.02) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .polaroid-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  .polaroid-caption {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1rem;
+    color: #6b5b4e;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+
+  .polaroid-hero {
+    max-width: 360px;
+    transform: rotate(2deg);
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+
+  @media (min-width: 900px) {
+    .polaroid-hero {
+      max-width: 420px;
+    }
+  }
+
+  .polaroid-tilt-left {
+    transform: rotate(-2deg);
+  }
+
+  .polaroid-tilt-right {
+    transform: rotate(2.5deg);
+  }
+
+  @keyframes gentle-float {
+    0%, 100% { transform: rotate(2deg) translateY(0); }
+    50% { transform: rotate(2deg) translateY(-8px); }
+  }
+
+  /* ═══════════════════════════════════════════
+     TORN PAPER DIVIDERS
+     ═══════════════════════════════════════════ */
+  .torn-divider {
+    height: 50px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .torn-cream-to-brown {
+    background: var(--leather);
+    clip-path: polygon(
+      0% 0%, 2% 35%, 5% 15%, 8% 40%, 12% 10%, 15% 45%, 18% 20%,
+      22% 50%, 25% 25%, 28% 48%, 32% 15%, 35% 42%, 38% 8%,
+      42% 38%, 45% 18%, 48% 45%, 52% 12%, 55% 40%, 58% 20%,
+      62% 48%, 65% 10%, 68% 42%, 72% 22%, 75% 50%, 78% 15%,
+      82% 45%, 85% 20%, 88% 42%, 92% 8%, 95% 38%, 98% 18%,
+      100% 0%, 100% 100%, 0% 100%
+    );
+  }
+
+  .torn-brown-to-cream {
+    background: var(--cream);
+    clip-path: polygon(
+      0% 0%, 2% 35%, 5% 15%, 8% 40%, 12% 10%, 15% 45%, 18% 20%,
+      22% 50%, 25% 25%, 28% 48%, 32% 15%, 35% 42%, 38% 8%,
+      42% 38%, 45% 18%, 48% 45%, 52% 12%, 55% 40%, 58% 20%,
+      62% 48%, 65% 10%, 68% 42%, 72% 22%, 75% 50%, 78% 15%,
+      82% 45%, 85% 20%, 88% 42%, 92% 8%, 95% 38%, 98% 18%,
+      100% 0%, 100% 100%, 0% 100%
+    );
+  }
+
+  /* ═══════════════════════════════════════════
+     SECTION SHARED STYLES
+     ═══════════════════════════════════════════ */
+  .section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--campfire);
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-label-dark {
+    color: var(--sandy);
+  }
+
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin: 0 0 2rem 0;
+    line-height: 1.1;
+  }
+
+  /* ═══════════════════════════════════════════
+     ABOUT SECTION
+     ═══════════════════════════════════════════ */
+  .about-section {
+    background: var(--leather);
+    color: var(--cream);
+  }
+
+  .about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 769px) {
+    .about-layout {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+  }
+
+  .about-photos {
+    flex-shrink: 0;
+  }
+
+  .about-photos .polaroid-frame {
+    max-width: 340px;
+  }
+
+  @media (min-width: 769px) {
+    .about-photos .polaroid-frame {
+      max-width: 380px;
+    }
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-lead {
+    font-family: var(--font-slab);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--campfire);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #ddd5ca;
+    line-height: 1.75;
+  }
+
+  .about-quote {
+    border-left: 3px solid var(--campfire);
+    padding-left: 1.5rem;
+    margin: 2rem 0 0 0;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--cream);
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .quote-mark {
+    font-size: 2.5rem;
+    color: var(--campfire);
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-right: 0.1em;
+  }
+
+  /* Family snapshots */
+  .family-snapshots {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .family-snapshots .polaroid-frame {
+    max-width: 280px;
+  }
+
+  .snapshot-1 {
+    transform: rotate(3deg);
+  }
+
+  .snapshot-2 {
+    transform: rotate(-2.5deg);
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 769px) {
+    .snapshot-2 { margin-top: 2.5rem; }
+  }
+
+  /* ═══════════════════════════════════════════
+     PHOTO BREAK
+     ═══════════════════════════════════════════ */
+  .photo-break {
+    position: relative;
+    height: 50vh;
+    min-height: 300px;
+    overflow: hidden;
+  }
+
+  .photo-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-break-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: white;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    padding: 0 1rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     RIVERS SECTION
+     ═══════════════════════════════════════════ */
+  .rivers-section {
+    background: var(--cream);
+  }
+
+  .rivers-intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #5a4a3e;
+    line-height: 1.7;
+  }
+
+  .rivers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 769px) {
+    .rivers-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .river-card {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .river-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  .river-card-img {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .river-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .river-card:hover .river-card-img img {
+    transform: scale(1.05);
+  }
+
+  .river-card-body {
+    padding: 1.5rem;
+  }
+
+  .river-card-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--espresso);
+    margin: 0 0 0.25rem;
+  }
+
+  .river-vibe {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--campfire);
+    margin-bottom: 0.75rem;
+  }
+
+  .river-card-body p:last-child {
+    font-size: 0.95rem;
+    color: #5a4a3e;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ═══════════════════════════════════════════
+     TRIPS SECTION
+     ═══════════════════════════════════════════ */
+  .trips-section {
+    background: var(--leather);
+    color: var(--cream);
+  }
+
+  .trips-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+    color: #ddd5ca;
+    line-height: 1.7;
+  }
+
+  .menu-board {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .menu-board-inner {
+    background: rgba(245, 240, 232, 0.06);
+    border: 2px solid rgba(245, 240, 232, 0.15);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+  }
+
+  @media (min-width: 769px) {
+    .menu-board-inner {
+      padding: 3rem 3.5rem;
+    }
+  }
+
+  .menu-section {
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--campfire);
+    margin: 0 0 0.25rem;
+    text-align: center;
+  }
+
+  .menu-section-subtitle {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--sandy);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+  }
+
+  .menu-item-left {
+    display: flex;
+    flex: 1;
+    align-items: baseline;
+    overflow: hidden;
+    margin-right: 0.75rem;
+  }
+
+  .menu-item-name {
+    font-family: var(--font-slab);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--cream);
+    white-space: nowrap;
+    margin-right: 0.5rem;
+  }
+
+  .menu-dots {
+    flex: 1;
+    border-bottom: 2px dotted rgba(245, 240, 232, 0.25);
+    min-width: 20px;
+    margin-bottom: 4px;
+  }
+
+  .menu-price {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--campfire);
+    white-space: nowrap;
+  }
+
+  .menu-item-desc {
+    font-size: 0.9rem;
+    color: #b8a99a;
+    margin-bottom: 1.25rem;
+    padding-left: 0.25rem;
+    line-height: 1.5;
+  }
+
+  .menu-divider-line {
+    height: 1px;
+    background: rgba(245, 240, 232, 0.12);
+    margin: 1.5rem 0 2rem;
+  }
+
+  .menu-fine-print {
+    font-size: 0.9rem;
+    color: #b8a99a;
+    line-height: 1.6;
+  }
+
+  .menu-fine-print p {
+    margin-bottom: 0.75rem;
+  }
+
+  .menu-fine-print strong {
+    color: var(--cream);
+  }
+
+  /* Trips CTA */
+  .trips-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .trips-cta-text {
+    font-family: var(--font-slab);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+  }
+
+  .trips-cta-subtext {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--sandy);
+  }
+
+  .trips-cta-subtext a {
+    color: var(--campfire);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .trips-cta-subtext a:hover {
+    color: #e0854b;
+  }
+
+  /* ═══════════════════════════════════════════
+     GALLERY SECTION
+     ═══════════════════════════════════════════ */
+  .gallery-section {
+    background: var(--cream);
+  }
+
+  .gallery-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+    color: #5a4a3e;
+    line-height: 1.7;
+  }
+
+  .scattered-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 769px) {
+    .scattered-gallery {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .scattered-gallery {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .scatter-photo {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .scatter-photo .polaroid-frame {
+    padding: 6px 6px 30px 6px;
+  }
+
+  .scatter-1 { transform: rotate(-2deg); }
+  .scatter-2 { transform: rotate(1.5deg); margin-top: 1rem; }
+  .scatter-3 { transform: rotate(-1deg); }
+  .scatter-4 { transform: rotate(2.5deg); margin-top: 0.5rem; }
+  .scatter-5 { transform: rotate(1deg); }
+  .scatter-6 { transform: rotate(-2.5deg); margin-top: 0.75rem; }
+  .scatter-7 { transform: rotate(2deg); }
+  .scatter-8 { transform: rotate(-1.5deg); margin-top: 1rem; }
+  .scatter-9 { transform: rotate(1.8deg); }
+  .scatter-10 { transform: rotate(-2deg); margin-top: 0.5rem; }
+  .scatter-11 { transform: rotate(2.2deg); }
+  .scatter-12 { transform: rotate(-1.2deg); margin-top: 0.75rem; }
+
+  .scatter-photo:hover {
+    z-index: 10;
+  }
+
+  /* ═══════════════════════════════════════════
+     PULL QUOTE SECTION
+     ═══════════════════════════════════════════ */
+  .pull-quote-section {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .pull-quote-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .pull-quote-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pull-quote-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(44, 24, 16, 0.75);
+  }
+
+  .pull-quote-text {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--cream);
+    text-align: center;
+    max-width: 800px;
+    padding: 3rem 2rem;
+    line-height: 1.4;
+    margin: 0;
+    border: none;
+  }
+
+  .quote-mark-large {
+    font-size: 4rem;
+    color: var(--campfire);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.1em;
+    display: inline;
+  }
+
+  /* ═══════════════════════════════════════════
+     CONTACT SECTION
+     ═══════════════════════════════════════════ */
+  .contact-section {
+    background: var(--leather);
+    color: var(--cream);
+  }
+
+  .postcard {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .postcard-inner {
+    background: var(--cream);
+    color: var(--espresso);
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media (min-width: 769px) {
+    .postcard-inner {
+      flex-direction: row;
+    }
+  }
+
+  .postcard-left {
+    flex: 1;
+    padding: 2.5rem 2rem;
+  }
+
+  @media (min-width: 769px) {
+    .postcard-left {
+      padding: 3rem;
+    }
+  }
+
+  .postcard-stamp {
+    width: 90px;
+    height: 90px;
+    border: 3px dashed var(--sandy);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    float: right;
+    margin-left: 1rem;
+  }
+
+  .postcard-stamp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .postcard-greeting {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--leather);
+    margin-bottom: 1rem;
+  }
+
+  .postcard-left p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    color: #5a4a3e;
+  }
+
+  .postcard-signoff {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--leather) !important;
+    margin-top: 1rem !important;
+  }
+
+  .postcard-right {
+    flex-shrink: 0;
+    display: flex;
+    position: relative;
+    padding: 2rem;
+    background: rgba(61, 43, 31, 0.03);
+  }
+
+  @media (min-width: 769px) {
+    .postcard-right {
+      width: 320px;
+      padding: 3rem 2rem;
+    }
+  }
+
+  .postcard-divider-vert {
+    display: none;
+    width: 1px;
+    background: var(--sandy);
+    opacity: 0.3;
+    margin-right: 2rem;
+  }
+
+  @media (min-width: 769px) {
+    .postcard-divider-vert { display: block; }
+  }
+
+  .postcard-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .postcard-detail-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--sandy);
+    margin-bottom: 0.15rem;
+  }
+
+  .postcard-detail a {
+    color: var(--espresso);
+    text-decoration: none;
+    font-family: var(--font-slab);
+    font-weight: 600;
+    transition: color 0.2s;
+    word-break: break-all;
+  }
+
+  .postcard-detail a:hover {
+    color: var(--campfire);
+  }
+
+  .postcard-detail p {
+    font-family: var(--font-slab);
+    font-weight: 600;
+    color: var(--espresso);
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.95rem;
+  }
+
+  .postcard-cta {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  /* ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ */
+  .dirtbag-footer {
+    background: var(--espresso);
+    color: var(--cream);
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-tagline {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--campfire);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    color: #8a7b6e;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--sandy);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--campfire);
+  }
+
+  .footer-dot {
+    color: #5a4a3e;
+    font-size: 0.6rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     SCROLL REVEAL (override global for this page)
+     ═══════════════════════════════════════════ */
+  html.js .dirtbag-page [data-reveal] {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html.js .dirtbag-page [data-reveal="up"] {
+    transform: translateY(30px);
+  }
+
+  html.js .dirtbag-page [data-reveal="left"] {
+    transform: translateX(-40px);
+  }
+
+  html.js .dirtbag-page [data-reveal="right"] {
+    transform: translateX(40px);
+  }
+
+  html.js .dirtbag-page [data-reveal].revealed {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+
+  /* ═══════════════════════════════════════════
+     REDUCED MOTION
+     ═══════════════════════════════════════════ */
+  @media (prefers-reduced-motion: reduce) {
+    html.js .dirtbag-page [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .polaroid-hero {
+      animation: none;
+    }
+
+    .scatter-photo,
+    .polaroid-frame {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  // ═══════════════════════════════════════════
+  // SCROLL REVEAL OBSERVER
+  // ═══════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', () => {
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    if (!revealEls.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
+  });
+
+  // ═══════════════════════════════════════════
+  // NAV SCROLL EFFECT
+  // ═══════════════════════════════════════════
+  const nav = document.getElementById('dirtbag-nav');
+  if (nav) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (window.scrollY > 60) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // MOBILE MENU TOGGLE
+  // ═══════════════════════════════════════════
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // GRAIN CANVAS OVERLAY
+  // ═══════════════════════════════════════════
+  const grainCanvas = document.getElementById('grain-canvas') as HTMLCanvasElement | null;
+  if (grainCanvas) {
+    const ctx = grainCanvas.getContext('2d');
+    if (ctx) {
+      function resizeGrain() {
+        if (!grainCanvas) return;
+        grainCanvas.width = window.innerWidth;
+        grainCanvas.height = window.innerHeight;
+      }
+      resizeGrain();
+      window.addEventListener('resize', resizeGrain);
+
+      function renderGrain() {
+        if (!ctx || !grainCanvas) return;
+        const w = grainCanvas.width;
+        const h = grainCanvas.height;
+        const imageData = ctx.createImageData(w, h);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+          const v = Math.random() * 255;
+          data[i] = v;
+          data[i + 1] = v;
+          data[i + 2] = v;
+          data[i + 3] = 20;
+        }
+        ctx.putImageData(imageData, 0, 0);
+      }
+      renderGrain();
+
+      // Refresh grain periodically for subtle animation
+      let grainFrame = 0;
+      function animateGrain() {
+        grainFrame++;
+        if (grainFrame % 8 === 0) renderGrain();
+        requestAnimationFrame(animateGrain);
+      }
+      animateGrain();
+    }
+  }
+
+  // ═══════════════════════════════════════════
+  // SMOOTH SCROLL FOR ANCHOR LINKS
+  // ═══════════════════════════════════════════
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = (anchor as HTMLAnchorElement).getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const navHeight = document.getElementById('dirtbag-nav')?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
