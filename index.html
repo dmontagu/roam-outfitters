@@ -160,6 +160,18 @@
             transform: translateY(0);
         }
 
+        /* Parallax photo dividers (fallback for iOS which doesn't support bg-fixed) */
+        @supports (-webkit-overflow-scrolling: touch) {
+            .bg-fixed {
+                background-attachment: scroll !important;
+            }
+        }
+        @media (hover: none) {
+            .bg-fixed {
+                background-attachment: scroll !important;
+            }
+        }
+
         /* Details/accordion for what to bring */
         details summary {
             cursor: pointer;
@@ -310,14 +322,31 @@
     </section>
 
     <!-- Waters Section -->
-    <section id="waters" class="py-24 px-6 bg-stone-900 text-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl md:text-5xl font-normal mb-6">Waters We Fish</h2>
+    <section id="waters" class="bg-stone-900 text-white">
+        <!-- Header + river names -->
+        <div class="py-24 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-serif text-4xl md:text-5xl font-normal mb-10">Waters We Fish</h2>
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-stone-500 font-serif text-lg md:text-xl tracking-wide">
+                    <span>Gallatin</span>
+                    <span class="text-stone-700">&middot;</span>
+                    <span>Yellowstone</span>
+                    <span class="text-stone-700">&middot;</span>
+                    <span>Madison</span>
+                    <span class="text-stone-700">&middot;</span>
+                    <span>Jefferson</span>
+                    <span class="text-stone-700">&middot;</span>
+                    <span>Boulder</span>
+                    <span class="text-stone-700">&middot;</span>
+                    <span>Missouri</span>
+                </div>
             </div>
+        </div>
 
-            <div class="space-y-8 text-stone-300 leading-relaxed">
-                <p>
+        <!-- Paragraph 1 -->
+        <div class="px-6 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <p class="text-stone-300 leading-relaxed text-lg">
                     I'm based in the Gallatin Valley of Southwest Montana, and the range of water I get to
                     fish is something I never take for granted. From classic freestone rivers to legendary
                     tailwaters, intimate spring creeks, productive reservoirs, and carefully managed private
@@ -325,7 +354,16 @@
                     to get out of your time on the water. Whether you're chasing rising trout with dry flies
                     or hunting larger, more aggressive fish with streamers, I'll put together a day that fits.
                 </p>
-                <p>
+            </div>
+        </div>
+
+        <!-- Photo divider 1 -->
+        <div class="w-full h-[40vh] bg-cover bg-center bg-fixed" style="background-image: url('assets/images/carousel/sunset-gravel-bar.webp')"></div>
+
+        <!-- Paragraph 2 -->
+        <div class="px-6 py-16">
+            <div class="max-w-3xl mx-auto">
+                <p class="text-stone-300 leading-relaxed text-lg">
                     I regularly guide on iconic rivers like the Gallatin, Yellowstone, Madison, Jefferson,
                     Boulder, and Missouri, each with its own character and challenges. Freestone systems
                     like the Gallatin, Yellowstone, Boulder, and upper Madison offer fast water, structure-rich
@@ -334,7 +372,16 @@
                     and dry-fly fishing in the region. Spring creeks and private waters round things out with
                     low-pressure environments and exceptional sight-fishing when conditions align.
                 </p>
-                <p>
+            </div>
+        </div>
+
+        <!-- Photo divider 2 -->
+        <div class="w-full h-[40vh] bg-cover bg-center bg-fixed" style="background-image: url('assets/images/carousel/mountain-river-forest.webp')"></div>
+
+        <!-- Paragraph 3 -->
+        <div class="px-6 py-16 pb-24">
+            <div class="max-w-3xl mx-auto">
+                <p class="text-stone-300 leading-relaxed text-lg">
                     Beyond rivers, I have access to reservoirs and select private fisheries that open up
                     opportunities during runoff, shoulder seasons, or when you just want something different.
                     Whether we're floating a big Western river, wading a quiet spring creek, or exploring
@@ -530,8 +577,8 @@
                 </div>
                 <div class="gallery-item wide" onclick="openLightbox(this)">
                     <picture>
-                        <source srcset="assets/images/gallery/double-rainbow-drift-boat.webp" type="image/webp">
-                        <img src="assets/images/gallery/double-rainbow-drift-boat.jpg" alt="Double rainbow over the river with drift boat" loading="lazy">
+                        <source srcset="assets/images/gallery/drift-boat-wooden-bridge.webp" type="image/webp">
+                        <img src="assets/images/gallery/drift-boat-wooden-bridge.jpg" alt="Drift boat passing under a wooden bridge with mountain views" loading="lazy">
                     </picture>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(this)">
