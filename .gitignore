@@ -1,7 +1,22 @@
+# IDE
 .idea/
+.vscode/
+
+# Claude
 .claude/
+
+# OS
 .DS_Store
 
-# Original source images (large files - processed versions are in assets/images/)
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Original source images (large files - processed versions are in src/assets/images/)
 my_assets/
+
+# Scratch files
 scratch/

@@ -1,0 +1,101 @@
+---
+import { getImage } from 'astro:assets';
+import sunsetGravelBarSrc from '../assets/images/carousel/sunset-gravel-bar.jpg';
+import mountainRiverForestSrc from '../assets/images/carousel/mountain-river-forest.jpg';
+
+// Generate optimized versions for parallax dividers (1920w max, WebP)
+const sunsetGravelBar = await getImage({
+    src: sunsetGravelBarSrc,
+    width: 1920,
+    format: 'avif',
+    quality: 70,
+});
+
+const mountainRiverForest = await getImage({
+    src: mountainRiverForestSrc,
+    width: 1920,
+    format: 'avif',
+    quality: 70,
+});
+---
+
+<section id="waters" class="bg-stone-900 text-white">
+    <!-- Header + river names -->
+    <div class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-5xl font-normal mb-10">Waters We Fish</h2>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-stone-400 font-serif text-lg md:text-xl tracking-wide">
+                <span>Gallatin</span>
+                <span class="text-stone-600" aria-hidden="true">&middot;</span>
+                <span>Yellowstone</span>
+                <span class="text-stone-600" aria-hidden="true">&middot;</span>
+                <span>Madison</span>
+                <span class="text-stone-600" aria-hidden="true">&middot;</span>
+                <span>Jefferson</span>
+                <span class="text-stone-600" aria-hidden="true">&middot;</span>
+                <span>Boulder</span>
+                <span class="text-stone-600" aria-hidden="true">&middot;</span>
+                <span>Missouri</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paragraph 1 -->
+    <div class="px-6 pb-16">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-stone-300 leading-relaxed text-lg">
+                I'm based in the Gallatin Valley of Southwest Montana, and the range of water I get to
+                fish is something I never take for granted. From classic freestone rivers to legendary
+                tailwaters, intimate spring creeks, productive reservoirs, and carefully managed private
+                waters, I tailor each trip to match the season, conditions, and what you're looking
+                to get out of your time on the water. Whether you're chasing rising trout with dry flies
+                or hunting larger, more aggressive fish with streamers, I'll put together a day that fits.
+            </p>
+        </div>
+    </div>
+
+    <!-- Photo divider 1 -->
+    <div
+        class="w-full h-[40vh] bg-cover bg-center bg-fixed"
+        style={`background-image: url('${sunsetGravelBar.src}')`}
+        role="img"
+        aria-label="Sunset over a gravel bar on a Montana river"
+    ></div>
+
+    <!-- Paragraph 2 -->
+    <div class="px-6 py-16">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-stone-300 leading-relaxed text-lg">
+                I regularly guide on iconic rivers like the Gallatin, Yellowstone, Madison, Jefferson,
+                Boulder, and Missouri, each with its own character and challenges. Freestone systems
+                like the Gallatin, Yellowstone, Boulder, and upper Madison offer fast water, structure-rich
+                runs, and visual dry-fly opportunities. Tailwaters like the Missouri and lower Madison
+                deliver consistent flows, dense trout populations, and some of the most technical nymph
+                and dry-fly fishing in the region. Spring creeks and private waters round things out with
+                low-pressure environments and exceptional sight-fishing when conditions align.
+            </p>
+        </div>
+    </div>
+
+    <!-- Photo divider 2 -->
+    <div
+        class="w-full h-[40vh] bg-cover bg-center bg-fixed"
+        style={`background-image: url('${mountainRiverForest.src}')`}
+        role="img"
+        aria-label="Mountain river flowing through a dense forest"
+    ></div>
+
+    <!-- Paragraph 3 -->
+    <div class="px-6 py-16 pb-24">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-stone-300 leading-relaxed text-lg">
+                Beyond rivers, I have access to reservoirs and select private fisheries that open up
+                opportunities during runoff, shoulder seasons, or when you just want something different.
+                Whether we're floating a big Western river, wading a quiet spring creek, or exploring
+                stillwater for trophy trout, flexibility and time well spent on the water are what drive
+                every trip I put together. Southwest Montana is home, and my goal is to give you an
+                authentic, high-quality fishing experience across its finest waters.
+            </p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (eliminates Google Fonts network dependency) */
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/500-italic.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-stone-850: #1c1917;
+  --color-stone-950: #0f0e0d;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero with cycling backgrounds */
+.hero-bg {
+  position: relative;
+  background-color: #0f0e0d;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+  z-index: 1;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-image.active {
+  opacity: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.gallery-grid .gallery-item {
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
+
+.gallery-grid .gallery-item.portrait {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.gallery-grid .gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-grid .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-grid .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .gallery-grid .gallery-item.wide {
+    grid-column: span 1;
+  }
+
+  .gallery-grid .gallery-item.portrait {
+    grid-row: span 1;
+    aspect-ratio: 3/2;
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transition: opacity 0.15s ease, filter 0.3s ease;
+}
+
+.lightbox img.loading {
+  filter: blur(12px);
+  transform: scale(1.03);
+}
+
+/* Parallax photo dividers (fallback for iOS) */
+@supports (-webkit-overflow-scrolling: touch) {
+  .bg-fixed {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (hover: none) {
+  .bg-fixed {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Details/accordion for what to bring */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .expand-icon {
+  transform: rotate(45deg);
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 16px;
+  background: #0f0e0d;
+  color: white;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}

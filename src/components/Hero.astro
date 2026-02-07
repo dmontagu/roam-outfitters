@@ -1,0 +1,127 @@
+---
+import { Image, getImage } from 'astro:assets';
+import logo from '../assets/images/logo.png';
+
+// Hero carousel images
+import wadingSnowy from '../assets/images/carousel/wading-snowy-peaks.jpg';
+import riverCanyon from '../assets/images/carousel/river-canyon-aerial.jpg';
+import goldenMeadow from '../assets/images/carousel/golden-meadow-river.jpg';
+import driftBoat from '../assets/images/carousel/drift-boat-green-valley.jpg';
+import rushingCreek from '../assets/images/carousel/rushing-mountain-creek.jpg';
+import gallatinCanyon from '../assets/images/carousel/gallatin-canyon.jpg';
+
+// Pre-generate LCP logo for preload hint
+const lcpLogo = await getImage({
+    src: logo,
+    width: 256,
+    format: 'webp',
+    quality: 80,
+});
+
+const heroSources = [
+    { raw: wadingSnowy, alt: 'Angler wading in a river with snowy mountain peaks in the background' },
+    { raw: riverCanyon, alt: 'Aerial view of a river winding through a canyon' },
+    { raw: goldenMeadow, alt: 'Golden meadow along a winding river at sunset' },
+    { raw: driftBoat, alt: 'Drift boat floating through a green valley' },
+    { raw: rushingCreek, alt: 'Rushing mountain creek with forested banks' },
+    { raw: gallatinCanyon, alt: 'Gallatin Canyon river flowing through dramatic scenery' },
+];
+
+// Generate optimized images at multiple sizes for deferred loading
+const deferredImages = await Promise.all(
+    heroSources.slice(1).map(async (img) => {
+        const sizes = await Promise.all([640, 1024, 1920].map(w =>
+            getImage({ src: img.raw, width: w, format: 'webp', quality: 75 })
+        ));
+        return {
+            alt: img.alt,
+            srcset: sizes.map((s, i) => `${s.src} ${[640, 1024, 1920][i]}w`).join(', '),
+            src: sizes[2].src,
+            width: sizes[2].attributes.width,
+            height: sizes[2].attributes.height,
+        };
+    })
+);
+---
+
+<!-- Preload LCP element (logo) -->
+<link rel="preload" as="image" href={lcpLogo.src} type="image/webp" fetchpriority="high">
+
+<section class="hero-bg min-h-screen flex items-center justify-center text-center px-6" aria-label="Hero">
+    <!-- Only the first image is in initial HTML; rest are injected by JS -->
+    <div class="hero-image active" id="hero-slide-0">
+        <Image
+            src={wadingSnowy}
+            alt={heroSources[0].alt}
+            widths={[640, 1024, 1920]}
+            sizes="100vw"
+            quality={75}
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+        />
+    </div>
+
+    <div class="hero-content max-w-3xl">
+        <h1 class="sr-only">Roam Outfitters - Montana's Premier Trout Guides</h1>
+        <Image
+            src={logo}
+            alt="Roam Outfitters"
+            class="w-48 md:w-64 mx-auto mb-8 invert"
+            width={256}
+            height={256}
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+        />
+        <p class="font-serif text-2xl md:text-3xl text-white/90 font-normal italic mb-12">Montana's Premier Trout Guides</p>
+        <a href="#about" class="inline-block text-white/70 hover:text-white transition">
+            <span class="block text-xs tracking-widest uppercase mb-2">Explore</span>
+            <svg class="w-5 h-5 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<script define:vars={{ deferredImages }}>
+    // Inject remaining carousel images after page load to avoid blocking LCP
+    window.addEventListener('load', () => {
+        const heroSection = document.querySelector('.hero-bg');
+        const firstSlide = document.getElementById('hero-slide-0');
+        if (!heroSection || !firstSlide) return;
+
+        const allSlides = [firstSlide];
+
+        deferredImages.forEach((imgData, i) => {
+            const div = document.createElement('div');
+            div.className = 'hero-image';
+            div.setAttribute('aria-hidden', 'true');
+
+            const img = document.createElement('img');
+            img.src = imgData.src;
+            img.srcset = imgData.srcset;
+            img.sizes = '100vw';
+            img.alt = imgData.alt;
+            img.width = imgData.width;
+            img.height = imgData.height;
+            img.decoding = 'async';
+            img.loading = 'lazy';
+
+            div.appendChild(img);
+            // Insert after hero-content (before it in DOM since hero-content has z-index)
+            heroSection.insertBefore(div, firstSlide.nextSibling);
+            allSlides.push(div);
+        });
+
+        // Start carousel cycling
+        let currentImage = 0;
+        setInterval(() => {
+            allSlides[currentImage].classList.remove('active');
+            allSlides[currentImage].setAttribute('aria-hidden', 'true');
+            currentImage = (currentImage + 1) % allSlides.length;
+            allSlides[currentImage].classList.add('active');
+            allSlides[currentImage].removeAttribute('aria-hidden');
+        }, 6000);
+    });
+</script>

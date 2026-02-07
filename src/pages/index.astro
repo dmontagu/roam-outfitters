@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Waters from '../components/Waters.astro';
+import Trips from '../components/Trips.astro';
+import Gallery from '../components/Gallery.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+    title="Roam Outfitters | Montana's Premier Trout Guides | Fly Fishing Gallatin Valley"
+    description="Guided fly fishing trips in Montana's Gallatin Valley. 23 years experience on the Missouri, Madison, Gallatin, Yellowstone and more. Book your adventure with Roam Outfitters."
+>
+    <Navigation />
+    <main id="main-content">
+        <Hero />
+        <About />
+        <Waters />
+        <Trips />
+        <Gallery />
+        <Contact />
+    </main>
+    <Footer />
+</BaseLayout>

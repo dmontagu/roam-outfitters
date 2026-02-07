@@ -1,0 +1,280 @@
+---
+import { Image, getImage } from 'astro:assets';
+
+// Gallery images
+import rainbowYellowstone from '../assets/images/gallery/rainbow-over-yellowstone.jpg';
+import wadeFishingCanyon from '../assets/images/gallery/wade-fishing-canyon.jpg';
+import trophyBrown from '../assets/images/gallery/trophy-brown-streamside.jpg';
+import brettSonBrown from '../assets/images/gallery/brett-son-brown-trout.jpg';
+import driftBoatBridge from '../assets/images/gallery/drift-boat-wooden-bridge.jpg';
+import coupleBrown from '../assets/images/gallery/couple-brown-trout-boat.jpg';
+import castingBridge from '../assets/images/gallery/casting-under-bridge.jpg';
+import kidRainbow from '../assets/images/gallery/kid-first-rainbow.jpg';
+import brettDaughter from '../assets/images/gallery/brett-daughter-creek-catch.jpg';
+import steelBridge from '../assets/images/gallery/steel-bridge-float.jpg';
+import aerialPelicans from '../assets/images/gallery/aerial-pelicans-drift-boat.jpg';
+import fishFace from '../assets/images/gallery/fish-face-fun.jpg';
+
+const galleryImages = [
+    { src: rainbowYellowstone, alt: 'Rainbow over the Yellowstone River with drift boat', wide: true },
+    { src: wadeFishingCanyon, alt: 'Angler wade fishing beneath canyon walls' },
+    { src: trophyBrown, alt: 'Client with a trophy brown trout streamside' },
+    { src: brettSonBrown, alt: 'Brett and his son Waylon with a brown trout' },
+    { src: driftBoatBridge, alt: 'Drift boat passing under a wooden bridge with mountain views', wide: true },
+    { src: coupleBrown, alt: 'Couple with a beautiful brown trout on the boat' },
+    { src: castingBridge, alt: 'Angler casting fly line under a bridge' },
+    { src: kidRainbow, alt: 'Young angler with their first rainbow trout' },
+    { src: brettDaughter, alt: "Brett and his daughter Letty with a creek trout" },
+    { src: steelBridge, alt: 'Floating through a steel bridge with snowy mountains' },
+    { src: aerialPelicans, alt: 'Aerial view of drift boat alongside pelicans on the river', wide: true },
+    { src: fishFace, alt: 'Having fun on the river with a catch' },
+];
+
+// Generate full-resolution versions for lightbox viewing
+const fullResImages = await Promise.all(
+    galleryImages.map(async (img) => {
+        const full = await getImage({
+            src: img.src,
+            width: Math.min(img.src.width, 2400),
+            format: 'webp',
+            quality: 90,
+        });
+        return { src: full.src, alt: img.alt };
+    })
+);
+---
+
+<section id="gallery" class="py-24 px-6 bg-stone-950">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="font-serif text-4xl md:text-5xl text-white font-normal text-center mb-4">On the Water</h2>
+        <p class="text-stone-400 text-center mb-12">A few moments from recent trips</p>
+
+        <div class="gallery-grid" role="list">
+            {galleryImages.map((img, i) => (
+                <button
+                    class:list={['gallery-item', { wide: img.wide }]}
+                    data-index={i}
+                    data-full={fullResImages[i].src}
+                    type="button"
+                    aria-label={`View: ${img.alt}`}
+                    role="listitem"
+                >
+                    <Image
+                        src={img.src}
+                        alt={img.alt}
+                        widths={img.wide ? [640, 1024] : [400, 800]}
+                        sizes={img.wide ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 50vw, 25vw'}
+                        quality={82}
+                        format="webp"
+                        loading="lazy"
+                    />
+                </button>
+            ))}
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="https://instagram.com/roam_outfitters_mt" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-stone-400 hover:text-white transition text-sm tracking-wide">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Follow @roam_outfitters_mt
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox with focus trap -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl z-10 p-2" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10 p-2" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-4xl z-10 p-2" id="lightbox-next" aria-label="Next image">&#8250;</button>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox')!;
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const closeBtn = document.getElementById('lightbox-close')!;
+    const prevBtn = document.getElementById('lightbox-prev')!;
+    const nextBtn = document.getElementById('lightbox-next')!;
+    const galleryItems = document.querySelectorAll<HTMLButtonElement>('.gallery-item');
+    let currentIndex = 0;
+    let previouslyFocused: HTMLElement | null = null;
+
+    // Focus trap elements
+    const focusableElements = [closeBtn, prevBtn, nextBtn];
+
+    // Collect full-res URLs from data attributes
+    const fullResUrls: string[] = [];
+    galleryItems.forEach(item => {
+        fullResUrls.push(item.dataset.full || '');
+    });
+
+    // Prefetch full-res images after page load
+    const prefetchCache = new Map<string, HTMLImageElement>();
+
+    window.addEventListener('load', () => {
+        // Start prefetching all full-res images with low priority
+        fullResUrls.forEach(url => {
+            if (!url) return;
+            const img = new Image();
+            img.decoding = 'async';
+            img.src = url;
+            prefetchCache.set(url, img);
+        });
+    });
+
+    // Also prefetch on hover for immediate priority boost
+    galleryItems.forEach((item, i) => {
+        item.addEventListener('mouseenter', () => {
+            const url = fullResUrls[i];
+            if (url && !prefetchCache.has(url)) {
+                const img = new Image();
+                img.src = url;
+                prefetchCache.set(url, img);
+            }
+            // Also prefetch neighbors for arrow-key navigation
+            for (const offset of [-1, 1]) {
+                const neighborIdx = (i + offset + fullResUrls.length) % fullResUrls.length;
+                const neighborUrl = fullResUrls[neighborIdx];
+                if (neighborUrl && !prefetchCache.has(neighborUrl)) {
+                    const img = new Image();
+                    img.decoding = 'async';
+                    img.src = neighborUrl;
+                    prefetchCache.set(neighborUrl, img);
+                }
+            }
+        });
+    });
+
+    function openLightbox(index: number) {
+        previouslyFocused = document.activeElement as HTMLElement;
+        currentIndex = index;
+        updateLightboxImage();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        previouslyFocused?.focus();
+    }
+
+    function updateLightboxImage() {
+        const fullUrl = fullResUrls[currentIndex];
+        const thumbImg = galleryItems[currentIndex].querySelector('img')!;
+        const thumbSrc = thumbImg.currentSrc || thumbImg.src;
+
+        // Hide old image immediately so stale content doesn't linger
+        lightboxImg.style.opacity = '0';
+        lightboxImg.classList.remove('loading');
+        lightboxImg.alt = thumbImg.alt;
+
+        function reveal() {
+            requestAnimationFrame(() => { lightboxImg.style.opacity = '1'; });
+        }
+
+        function setSrcAndReveal(src: string) {
+            lightboxImg.src = src;
+            if (lightboxImg.complete && lightboxImg.naturalWidth > 0) {
+                reveal();
+            } else {
+                lightboxImg.onload = reveal;
+            }
+        }
+
+        if (fullUrl) {
+            const cached = prefetchCache.get(fullUrl);
+            if (cached?.complete) {
+                // Full-res already loaded, show it sharp
+                lightboxImg.classList.remove('loading');
+                setSrcAndReveal(fullUrl);
+            } else {
+                // Show blurred thumbnail first, then sharpen when full-res arrives
+                lightboxImg.classList.add('loading');
+                setSrcAndReveal(thumbSrc);
+
+                const fullImg = cached || new Image();
+                if (!cached) {
+                    fullImg.src = fullUrl;
+                    prefetchCache.set(fullUrl, fullImg);
+                }
+                fullImg.onload = () => {
+                    // Only upgrade if still viewing this image
+                    if (lightboxImg.alt === thumbImg.alt) {
+                        lightboxImg.src = fullUrl;
+                        lightboxImg.classList.remove('loading');
+                    }
+                };
+            }
+        } else {
+            setSrcAndReveal(thumbSrc);
+        }
+
+        // Prefetch neighbors for smooth arrow navigation
+        for (const offset of [-1, 1]) {
+            const neighborIdx = (currentIndex + offset + fullResUrls.length) % fullResUrls.length;
+            const neighborUrl = fullResUrls[neighborIdx];
+            if (neighborUrl && !prefetchCache.has(neighborUrl)) {
+                const img = new Image();
+                img.decoding = 'async';
+                img.src = neighborUrl;
+                prefetchCache.set(neighborUrl, img);
+            }
+        }
+    }
+
+    function navigate(direction: number) {
+        currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+        updateLightboxImage();
+    }
+
+    // Gallery item click handlers
+    galleryItems.forEach((item, i) => {
+        item.addEventListener('click', () => openLightbox(i));
+    });
+
+    // Lightbox controls
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => navigate(-1));
+    nextBtn.addEventListener('click', () => navigate(1));
+
+    // Close on backdrop click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation + focus trap
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+
+        switch (e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                navigate(-1);
+                break;
+            case 'ArrowRight':
+                navigate(1);
+                break;
+            case 'Tab': {
+                // Focus trap
+                const currentFocusIndex = focusableElements.indexOf(document.activeElement as HTMLElement);
+                if (e.shiftKey) {
+                    if (currentFocusIndex <= 0) {
+                        e.preventDefault();
+                        focusableElements[focusableElements.length - 1].focus();
+                    }
+                } else {
+                    if (currentFocusIndex >= focusableElements.length - 1) {
+                        e.preventDefault();
+                        focusableElements[0].focus();
+                    }
+                }
+                break;
+            }
+        }
+    });
+</script>
