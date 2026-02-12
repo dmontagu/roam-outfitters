@@ -4,11 +4,11 @@ import logo from '../assets/images/logo.png';
 
 // Hero carousel images
 import wadingSnowy from '../assets/images/carousel/wading-snowy-peaks.jpg';
-import riverCanyon from '../assets/images/carousel/river-canyon-aerial.jpg';
-import goldenMeadow from '../assets/images/carousel/golden-meadow-river.jpg';
+import sunsetGravelBar from '../assets/images/carousel/sunset-gravel-bar.jpg';
+import troutUnderwater from '../assets/images/carousel/trout-underwater.jpg';
 import driftBoat from '../assets/images/carousel/drift-boat-green-valley.jpg';
-import rushingCreek from '../assets/images/carousel/rushing-mountain-creek.jpg';
-import gallatinCanyon from '../assets/images/carousel/gallatin-canyon.jpg';
+import goldenMeadow from '../assets/images/carousel/golden-meadow-river.jpg';
+import mountainForest from '../assets/images/carousel/mountain-river-forest.jpg';
 
 // Pre-generate LCP logo for preload hint
 const lcpLogo = await getImage({
@@ -19,12 +19,12 @@ const lcpLogo = await getImage({
 });
 
 const heroSources = [
-    { raw: wadingSnowy, alt: 'Angler wading in a river with snowy mountain peaks in the background' },
-    { raw: riverCanyon, alt: 'Aerial view of a river winding through a canyon' },
-    { raw: goldenMeadow, alt: 'Golden meadow along a winding river at sunset' },
-    { raw: driftBoat, alt: 'Drift boat floating through a green valley' },
-    { raw: rushingCreek, alt: 'Rushing mountain creek with forested banks' },
-    { raw: gallatinCanyon, alt: 'Gallatin Canyon river flowing through dramatic scenery' },
+    { raw: wadingSnowy, alt: 'Angler wading in a river with snowy mountain peaks in the background', focus: 'center' },
+    { raw: sunsetGravelBar, alt: 'Angler on a gravel bar at sunset with golden light', focus: '75% center' },
+    { raw: troutUnderwater, alt: 'Trout swimming just below the water surface', focus: '70% center' },
+    { raw: driftBoat, alt: 'Drift boat floating through a green valley', focus: '62% center' },
+    { raw: goldenMeadow, alt: 'Golden meadow along a winding river at sunset', focus: 'center' },
+    { raw: mountainForest, alt: 'River winding through forested mountains', focus: 'center' },
 ];
 
 // Generate optimized images at multiple sizes for deferred loading
@@ -39,6 +39,7 @@ const deferredImages = await Promise.all(
             src: sizes[2].src,
             width: sizes[2].attributes.width,
             height: sizes[2].attributes.height,
+            focus: img.focus,
         };
     })
 );
@@ -51,7 +52,7 @@ const deferredImages = await Promise.all(
     <!-- Only the first image is in initial HTML; rest are injected by JS -->
     <div class="hero-image active" id="hero-slide-0">
         <Image
-            src={wadingSnowy}
+            src={heroSources[0].raw}
             alt={heroSources[0].alt}
             widths={[640, 1024, 1920]}
             sizes="100vw"
@@ -59,24 +60,25 @@ const deferredImages = await Promise.all(
             format="webp"
             loading="eager"
             fetchpriority="high"
+            style={`object-position: ${heroSources[0].focus}`}
         />
     </div>
 
     <div class="hero-content max-w-3xl">
-        <h1 class="sr-only">Roam Outfitters - Montana's Premier Trout Guides</h1>
+        <h1 class="sr-only">Roam Outfitters - Flyfishing Montana's Premier Waters</h1>
         <Image
             src={logo}
             alt="Roam Outfitters"
-            class="w-48 md:w-64 mx-auto mb-8 invert"
+            class="w-48 md:w-64 mx-auto mb-8 brightness-0 invert"
             width={256}
             height={256}
             format="webp"
             loading="eager"
             fetchpriority="high"
         />
-        <p class="font-serif text-2xl md:text-3xl text-white/90 font-normal italic mb-12">Montana's Premier Trout Guides</p>
+        <p class="font-serif text-2xl md:text-3xl text-white/90 font-normal italic mb-12">Flyfishing Montana's Premier Waters</p>
         <a href="#about" class="inline-block text-accent/70 hover:text-accent transition">
-            <span class="block text-xs tracking-widest uppercase mb-2 text-white/60">Explore</span>
+            <span class="block text-xs tracking-widest uppercase mb-2 text-white/80">Explore</span>
             <svg class="w-5 h-5 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
             </svg>
@@ -107,6 +109,7 @@ const deferredImages = await Promise.all(
             img.height = imgData.height;
             img.decoding = 'async';
             img.loading = 'lazy';
+            if (imgData.focus) img.style.objectPosition = imgData.focus;
 
             div.appendChild(img);
             // Insert after hero-content (before it in DOM since hero-content has z-index)

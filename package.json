@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmontagu/roam-outfitters.git"
+    "url": "git+https://github.com/roam-outfitters/roam-outfitters.git"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",

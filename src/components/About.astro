@@ -1,26 +1,36 @@
 ---
 import { Image } from 'astro:assets';
+import bigRainbow from '../assets/images/gallery/big-rainbow-bluebird-day.jpg';
 import brettPhoto from '../assets/images/about/brett.jpg';
+
+const aboutImages = [
+    { src: bigRainbow, alt: 'Brett Seng with a big rainbow trout on a bluebird day' },
+    { src: brettPhoto, alt: 'Brett Seng with clients having fun on the river' },
+];
 ---
 
 <section id="about" class="py-24 px-6">
     <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="aspect-[4/3] overflow-hidden order-2 md:order-1" data-reveal="left">
-                <Image
-                    src={brettPhoto}
-                    alt="Brett Seng with clients and a trophy brown trout on the river"
-                    class="w-full h-full object-cover"
-                    widths={[400, 800]}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={82}
-                    format="webp"
-                    loading="lazy"
-                />
+            <div class="space-y-4 order-2 md:order-1" data-reveal="left">
+                {aboutImages.map((img) => (
+                    <div class="about-photo aspect-[4/3] overflow-hidden">
+                        <Image
+                            src={img.src}
+                            alt={img.alt}
+                            class="w-full h-full object-cover transition-transform duration-500"
+                            widths={[400, 800]}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={82}
+                            format="webp"
+                            loading="lazy"
+                        />
+                    </div>
+                ))}
             </div>
             <div class="order-1 md:order-2" data-reveal="right">
                 <h2 class="font-serif text-4xl md:text-5xl text-stone-900 mb-8 font-normal">
-                    Outfitter/Owner<br>Brett Seng
+                    Owner/Outfitter<br>Brett Seng
                     <span class="accent-line"></span>
                 </h2>
                 <div class="space-y-5 text-stone-600 leading-relaxed">
@@ -46,6 +56,11 @@ import brettPhoto from '../assets/images/about/brett.jpg';
                         When the season picks up, I work with a small crew of handpicked guides who share
                         my standards and passion for these waters — so whether I'm in the boat or one of
                         my guys is, you're getting the same experience.
+                    </p>
+                    <p>
+                        I can accommodate up to eight anglers in total. I have trusted guides that I've
+                        worked with extensively, so please feel free to inquire about the rest of my team
+                        for a group trip.
                     </p>
                 </div>
                 <div class="mt-8 pt-8 border-t border-stone-200 flex gap-8 text-sm text-stone-500">
