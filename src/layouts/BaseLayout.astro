@@ -20,14 +20,17 @@ const siteUrl = 'https://roamoutfitters.com';
     <meta name="geo.region" content="US-MT">
     <meta name="geo.placename" content="Gallatin Valley, Montana">
 
+    <link rel="canonical" href={siteUrl}>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}favicon.ico`}>
     <link rel="icon" type="image/png" sizes="32x32" href={`${import.meta.env.BASE_URL}favicon-32x32.png`}>
     <link rel="icon" type="image/png" sizes="16x16" href={`${import.meta.env.BASE_URL}favicon-16x16.png`}>
     <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}>
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`}>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Roam Outfitters | Montana's Premier Trout Guides">
+    <meta property="og:title" content="Roam Outfitters | Flyfishing Montana's Premier Waters">
     <meta property="og:description" content="Guided fly fishing trips in Montana's Gallatin Valley. 23 years of experience on blue ribbon waters.">
     <meta property="og:type" content="website">
     <meta property="og:url" content={siteUrl}>
@@ -37,7 +40,7 @@ const siteUrl = 'https://roamoutfitters.com';
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Roam Outfitters | Montana's Premier Trout Guides">
+    <meta name="twitter:title" content="Roam Outfitters | Flyfishing Montana's Premier Waters">
     <meta name="twitter:description" content="Guided fly fishing trips in Montana's Gallatin Valley. 23 years of experience on blue ribbon waters.">
     <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`}>
 
@@ -46,7 +49,7 @@ const siteUrl = 'https://roamoutfitters.com';
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Roam Outfitters",
-        "description": "Montana's Premier Trout Guides - Guided fly fishing trips in the Gallatin Valley",
+        "description": "Flyfishing Montana's Premier Waters - Guided fly fishing trips in the Gallatin Valley",
         "url": "https://roamoutfitters.com",
         "telephone": "+1-406-539-0957",
         "email": "roamoutfittersmt@gmail.com",
